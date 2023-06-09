@@ -3,7 +3,7 @@
 ])
 
 
-<div class="border-b border-white-2">
+<div class="border-b border-white-2 border-opacity-40">
     <nav {{$attributes->class(["test"])}}>
         {{-- Logo --}}
         <div class="flex gap-[10px]">

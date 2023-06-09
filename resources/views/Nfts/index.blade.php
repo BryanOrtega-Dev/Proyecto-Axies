@@ -5,6 +5,9 @@
     </x-nav>
     <x-header></x-header>
     <x-collection></x-collection>
+    <x-itemToday></x-itemToday>
+    <x-itemLive></x-itemLive>
+    <x-seller></x-seller>
 
     <x-footer></x-footer>
 @endsection

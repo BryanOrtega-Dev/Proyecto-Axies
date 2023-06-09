@@ -15,6 +15,7 @@ module.exports = {
         'secundary-grey' : '#343444',
         'white-2' : '#8A8AA0',
         'white-3' : '#7A798A',
+        'Warning' : '#FFBD0C',
       },
       
       width : {
@@ -42,7 +43,10 @@ module.exports = {
       },
 
       borderRadius : {
-        'ten' : '10px'
+        'ten' : '10px',
+        'Twenty' : '20px',
+        'thirty' : '30px',
+        'thirtyFour' : '34px',
       }
 
     },
