@@ -13,9 +13,11 @@ module.exports = {
         'like-color' : '#14141F',
         'blue-primary' : '#5142FC',
         'secundary-grey' : '#343444',
+        'secundary-white' : '#EBEBEB',
         'white-2' : '#8A8AA0',
         'white-3' : '#7A798A',
         'Warning' : '#FFBD0C',
+        'black6' : 'background: rgba(0, 0, 0, 0.6)',
       },
       
       width : {

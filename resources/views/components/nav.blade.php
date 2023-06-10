@@ -22,40 +22,40 @@
         {{-- List --}}
         <ul class="flex items-center ms-[239px] mb-[11px] gap-10">
             <li class="text-white text-18px font-bold">
-                <a href="#" >Home</a>
+                <a href="#" class="leading-[26px]" >Home</a>
             </li>
-            <li class="text-white text-18px font-bold">
-                <a href="#" class="flex items-center gap-[6px]">Explore 
+            <li class="text-white text-18px font-bold leading-[26px]">
+                <a href="#" class="flex items-center gap-[6px] Leading-[26px]">Explore 
                     <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4.99997 5.85012C4.82075 5.85012 4.64155 5.78169 4.50492 5.64512L0.205141 1.3453C-0.0683805 1.07178 -0.0683805 0.628311 0.205141 0.3549C0.478553 0.0814885 0.921933 0.0814885 1.19548 0.3549L4.99997 4.15962L8.80449 0.355033C9.07801 0.0816214 9.52135 0.0816214 9.79474 0.355033C10.0684 0.628444 10.0684 1.07191 9.79474 1.34543L5.49503 5.64525C5.35832 5.78185 5.17913 5.85012 4.99997 5.85012Z" fill="white"/>
                     </svg>
                 </a>
             </li>
-            <li class="text-white text-18px font-bold">
-                <a href="#" class="flex items-center gap-[6px]">Activity
+            <li class="text-white text-18px font-bold leading-[26px]">
+                <a href="#" class="flex items-center gap-[6px] Leading-[26px]">Activity
                     <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.99997 5.85012C4.82075 5.85012 4.64155 5.78169 4.50492 5.64512L0.205141 1.3453C-0.0683805 1.07178 -0.0683805 0.628311 0.205141 0.3549C0.478553 0.0814885 0.921933 0.0814885 1.19548 0.3549L4.99997 4.15962L8.80449 0.355033C9.07801 0.0816214 9.52135 0.0816214 9.79474 0.355033C10.0684 0.628444 10.0684 1.07191 9.79474 1.34543L5.49503 5.64525C5.35832 5.78185 5.17913 5.85012 4.99997 5.85012Z" fill="white"/>
                     </svg>
                         
                 </a>
             </li>
-            <li class="text-white text-18px font-bold">
-                <a href="#" class="flex items-center gap-[6px]">Community
+            <li class="text-white text-18px font-bold leading-[26px]">
+                <a href="#" class="flex items-center gap-[6px] Leading-[26px]">Community
                     <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.99997 5.85012C4.82075 5.85012 4.64155 5.78169 4.50492 5.64512L0.205141 1.3453C-0.0683805 1.07178 -0.0683805 0.628311 0.205141 0.3549C0.478553 0.0814885 0.921933 0.0814885 1.19548 0.3549L4.99997 4.15962L8.80449 0.355033C9.07801 0.0816214 9.52135 0.0816214 9.79474 0.355033C10.0684 0.628444 10.0684 1.07191 9.79474 1.34543L5.49503 5.64525C5.35832 5.78185 5.17913 5.85012 4.99997 5.85012Z" fill="white"/>
                     </svg>
                         
                 </a>
             </li>
-            <li class="text-white text-18px font-bold">
-                <a href="#" class="flex items-center gap-[6px]">Pages
+            <li class="text-white text-18px font-bold leading-[26px]">
+                <a href="#" class="flex items-center gap-[6px] Leading-[26px]">Pages
                     <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.99997 5.85012C4.82075 5.85012 4.64155 5.78169 4.50492 5.64512L0.205141 1.3453C-0.0683805 1.07178 -0.0683805 0.628311 0.205141 0.3549C0.478553 0.0814885 0.921933 0.0814885 1.19548 0.3549L4.99997 4.15962L8.80449 0.355033C9.07801 0.0816214 9.52135 0.0816214 9.79474 0.355033C10.0684 0.628444 10.0684 1.07191 9.79474 1.34543L5.49503 5.64525C5.35832 5.78185 5.17913 5.85012 4.99997 5.85012Z" fill="white"/>
                     </svg>
                         
                 </a>
             </li>
-            <li class="text-white text-18px font-bold">
+            <li class="text-white text-18px font-bold leading-[26px]">
                 <a href="#" class="flex items-center gap-[6px]">Contact
                     <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.99997 5.85012C4.82075 5.85012 4.64155 5.78169 4.50492 5.64512L0.205141 1.3453C-0.0683805 1.07178 -0.0683805 0.628311 0.205141 0.3549C0.478553 0.0814885 0.921933 0.0814885 1.19548 0.3549L4.99997 4.15962L8.80449 0.355033C9.07801 0.0816214 9.52135 0.0816214 9.79474 0.355033C10.0684 0.628444 10.0684 1.07191 9.79474 1.34543L5.49503 5.64525C5.35832 5.78185 5.17913 5.85012 4.99997 5.85012Z" fill="white"/>
@@ -65,7 +65,7 @@
             </li>
         </ul>
         {{-- Button search and Wallet --}}
-        <div class="flex items-center ms-[105px] gap-8">
+        <div class="flex items-center ms-[125px] gap-8">
             <button class="mb-[14px]">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <mask id="mask0_201_1166" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="1" width="18" height="17">
