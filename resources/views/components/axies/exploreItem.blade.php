@@ -242,11 +242,11 @@
         </div>
     </div>
     <div class="flex flex-wrap gap-[38px]">
-        <x-itemExplore></x-itemExplore>
-        <x-itemExplore></x-itemExplore>
-        <x-itemExplore></x-itemExplore>
-        <x-itemExplore></x-itemExplore>
-        <x-itemExplore></x-itemExplore>
-        <x-itemExplore></x-itemExplore>
+        <x-axies.itemExplore></x-axies.itemExplore>
+        <x-axies.itemExplore></x-axies.itemExplore>
+        <x-axies.itemExplore></x-axies.itemExplore>
+        <x-axies.itemExplore></x-axies.itemExplore>
+        <x-axies.itemExplore></x-axies.itemExplore>
+        <x-axies.itemExplore></x-axies.itemExplore>
     </div>
 </div>

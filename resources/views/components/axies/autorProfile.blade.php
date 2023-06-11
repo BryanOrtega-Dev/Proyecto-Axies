@@ -62,14 +62,14 @@
 </div>
 <div class="px-[255px] mt-[60px]">
     <div class="flex flex-wrap gap-x-[30px] gap-y-10">
-        <x-itemToday></x-itemToday>
-        <x-itemToday></x-itemToday>
-        <x-itemToday></x-itemToday>
-        <x-itemToday></x-itemToday>     
-        <x-itemToday></x-itemToday>     
-        <x-itemToday></x-itemToday>     
-        <x-itemToday></x-itemToday>     
-        <x-itemToday></x-itemToday>     
+        <x-axies.itemToday></x-axies.itemToday>
+        <x-axies.itemToday></x-axies.itemToday>
+        <x-axies.itemToday></x-axies.itemToday>
+        <x-axies.itemToday></x-axies.itemToday>     
+        <x-axies.itemToday></x-axies.itemToday>     
+        <x-axies.itemToday></x-axies.itemToday>     
+        <x-axies.itemToday></x-axies.itemToday>     
+        <x-axies.itemToday></x-axies.itemToday>     
     </div>
     <button class="mt-10 mb-20 ms-[628px] bg-transparent border border-white rounded-thirty text-white text-15px leading-[22px] px-10 py-4">
         Load More

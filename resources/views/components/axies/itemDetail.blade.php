@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="bg-secundary-grey py-3 ps-3 rounded-2xl w-[295px] mt-6 mb-4">
-            <x-creatorName></x-creatorName>
+            <x-axies.creatorName></x-axies.creatorName>
         </div>
         <p class="text-white font-normal text-14px leading-[22px] w-[620px]">
             Habitant sollicitudin faucibus cursus lectus pulvinar dolor non ultrices eget. Facilisi lobortisal morbi fringilla urna amet sed ipsum vitae ipsum malesuada. Habitant sollicitudin faucibus cursus lectus pulvinar dolor non ultrices eget. Facilisi lobortisal morbi fringilla urna amet sed ipsum
@@ -59,10 +59,10 @@
         <a class="font-bold text-white text-14px leading-5" href="#">Explore more</a>
     </div>
     <div class="flex gap-[30px] mt-10">
-        <x-itemAuthor></x-itemAuthor>
-        <x-itemAuthor></x-itemAuthor>
-        <x-itemAuthor></x-itemAuthor>
-        <x-itemAuthor></x-itemAuthor>
+        <x-axies.itemAuthor></x-axies.itemAuthor>
+        <x-axies.itemAuthor></x-axies.itemAuthor>
+        <x-axies.itemAuthor></x-axies.itemAuthor>
+        <x-axies.itemAuthor></x-axies.itemAuthor>
     </div>
     <div class="flex justify-center items-start mt-[38px] pb-20">
         <button class="me-5" >

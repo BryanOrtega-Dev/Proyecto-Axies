@@ -1,7 +1,7 @@
 <div class="px-[255px] py-20 flex gap-20">
     <div class="flex flex-col gap-5">
         <h6 class="text-white text-xl leading-[26px] font-bold gap">Preview item</h6>
-        <x-itemCreate></x-itemCreate>
+        <x-axies.itemCreate></x-axies.itemCreate>
     </div>
     <div>
         <form class="flex flex-col gap-5" action="" method="post" enctype="multipart/form-data">

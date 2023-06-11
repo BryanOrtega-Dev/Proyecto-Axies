@@ -21,6 +21,6 @@
                <h5 class="text-14px font-bold leading-[22px] text-white"><span class="text-white-2 text-[13px] leading-5 font-normal">Created by </span>Ralph Garraway</h5>
             </div>
         </div>
-        <x-viewLike></x-viewLike>
+        <x-axies.viewLike></x-axies.viewLike>
     </div>
 </div>

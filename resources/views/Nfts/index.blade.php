@@ -1,22 +1,22 @@
 @extends('layouts.main')
 
 @section('main')
-    <x-nav class="flex px-[255px] pt-4 w-auto" id="2">
-    </x-nav>
-    <x-header></x-header>
+    <x-axies.nav class="flex px-[255px] pt-4 w-auto" id="2">
+    </x-axies.nav>
+    <x-axies.header></x-axies.header>
     {{-- Author --}}
-    {{-- <x-autorProfile></x-autorProfile> --}}
+    {{-- <x-axies.autorProfile></x-axies.autorProfile> --}}
     {{-- item Deteil --}}
-    {{-- <x-itemDetail></x-itemDetail> --}}
+    {{-- <x-axies.itemDetail></x-axies.itemDetail> --}}
     {{-- itemCreate--}}
-    {{-- <x-createItem></x-createItem> --}}
+    {{-- <x-axies.createItem></x-axies.createItem> --}}
     {{-- exploreItem --}}
-    <x-exploreItem></x-exploreItem>
-    {{-- <x-collection></x-collection> --}}
-    {{-- <x-itemToday></x-itemToday> --}}
-    {{-- <x-itemLive></x-itemLive> --}}
-    {{-- <x-itemAuthor></x-itemAuthor> --}}
-    {{-- <x-seller></x-seller> --}}
+    <x-axies.exploreItem></x-axies.exploreItem>
+    {{-- <x-axies.collection></x-axies.collection> --}}
+    {{-- <x-axies.itemToday></x-axies.itemToday> --}}
+    {{-- <x-axies.itemLive></x-axies.itemLive> --}}
+    {{-- <x-axies.itemAuthor></x-axies.itemAuthor> --}}
+    {{-- <x-axies.seller></x-axies.seller> --}}
 
-    <x-footer></x-footer>
+    <x-axies.footer></x-axies.footer>
 @endsection
