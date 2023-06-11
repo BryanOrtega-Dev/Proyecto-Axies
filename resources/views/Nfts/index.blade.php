@@ -7,12 +7,16 @@
     {{-- Author --}}
     {{-- <x-autorProfile></x-autorProfile> --}}
     {{-- item Deteil --}}
-    <x-itemDetail></x-itemDetail>
-    <x-collection></x-collection>
-    <x-itemToday></x-itemToday>
-    <x-itemLive></x-itemLive>
-    <x-itemAuthor></x-itemAuthor>
-    <x-seller></x-seller>
+    {{-- <x-itemDetail></x-itemDetail> --}}
+    {{-- itemCreate--}}
+    {{-- <x-createItem></x-createItem> --}}
+    {{-- exploreItem --}}
+    <x-exploreItem></x-exploreItem>
+    {{-- <x-collection></x-collection> --}}
+    {{-- <x-itemToday></x-itemToday> --}}
+    {{-- <x-itemLive></x-itemLive> --}}
+    {{-- <x-itemAuthor></x-itemAuthor> --}}
+    {{-- <x-seller></x-seller> --}}
 
     <x-footer></x-footer>
 @endsection
