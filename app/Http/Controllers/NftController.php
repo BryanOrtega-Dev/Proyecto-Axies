@@ -11,7 +11,7 @@ class NftController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index():View
     {
         return  view('Nfts.index');
     }
@@ -35,7 +35,7 @@ class NftController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Nft $nft)
+    public function show(string $id)
     {
         //
     }
@@ -43,7 +43,7 @@ class NftController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Nft $nft)
+    public function edit(string $id)
     {
         //
     }
@@ -51,7 +51,7 @@ class NftController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Nft $nft)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -59,7 +59,7 @@ class NftController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Nft $nft)
+    public function destroy(string $id)
     {
         //
     }
