@@ -22,7 +22,7 @@
         {{-- List --}}
         <ul class="flex items-center ms-[239px] mb-[11px] gap-10">
             <li class="text-white text-18px font-bold">
-                <a href="#" class="leading-[26px]" >Home</a>
+                <a href="{{ action([\App\Http\Controllers\NftController::class, 'index']) }}" class="leading-[26px]" >Home</a>
             </li>
             <li class="text-white text-18px font-bold leading-[26px]">
                 <a href="#" class="flex items-center gap-[6px] Leading-[26px]">Explore 
