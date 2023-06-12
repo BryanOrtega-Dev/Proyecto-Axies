@@ -5,14 +5,18 @@
         </div>
     </div>
     <div class="flex items-center justify-between mt-[21px] mb-[17px]">
-        <h4 class="text-white font-bold text-18px leading-[26px]">"Crypto Egg Stamp #5”</h4>
+        <h4 id="titleShow" class="text-white font-bold text-18px leading-[26px]"></h4>
         <x-axies.bsc></x-axies.bsc>
     </div>
     <div class="flex items-center justify-between mb-[17px]">
         <x-axies.creatorName></x-axies.creatorName>
         <div class="flex items-end flex-col h-12">
             <h5 class="text-white-2 text-[13px] leading-5 font-normal">Current Bid</h5>
-            <h4 class="text-white text-18px leading-[26px] font-bold">4.89 ETH</h4> 
+            <div class="flex gap-1">
+                <h4 id="priceShow" class="text-white text-18px leading-[26px] font-bold"></h4> 
+                <span  class="text-white text-18px leading-[26px] font-bold"> ETH</span> 
+
+            </div>
         </div>
     </div>
     <div class="flex items-center justify-between ">
@@ -25,3 +29,5 @@
         <x-axies.viewHistory></x-axies.viewHistory>
     </div>
 </div>
+
+{{-- a partir de aca comenzo justo --}}
