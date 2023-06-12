@@ -1,7 +1,7 @@
-<div class="border-b border-white-2 border-opacity-40">
+<div class="border-b border-white-2 border-opacity-40 sticky top-0 bg-main-color z-[2]">
     <nav {{$attributes->class(["flex ps-[255px] pt-4"])}}>
         {{-- Logo --}}
-        <div class="flex gap-[10px]">
+        <a href="{{ action([\App\Http\Controllers\NftController::class, 'index']) }}" class="flex gap-[10px]">
             <svg width="30" height="41" viewBox="0 0 30 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18.75 0C10.2255 5.0344 11.25 19.2187 11.25 19.2187C11.25 19.2187 7.5 17.9375 7.5 12.1719C3.02601 14.831 0 19.9421 0 25.625C0 34.1164 6.71572 41 15 41C23.2843 41 30 34.1164 30 25.625C29.9999 13.1328 18.75 10.5703 18.75 0V0ZM16.3176 35.7023C13.3034 36.4725 10.2505 34.5924 9.49887 31.5027C8.74736 28.4131 10.5816 25.2838 13.596 24.5135C20.8732 22.6538 21.7852 18.4592 21.7852 18.4592C21.7852 18.4592 25.4141 33.3775 16.3176 35.7023Z" fill="url(#paint0_linear_201_1188)"/>
                 <defs>
@@ -13,21 +13,21 @@
             </svg>
                 
             <h1 class="text-white text-36px leading-[56px] font-bold">Axies</h1>
-        </div>
+        </a>
         {{-- List --}}
         <ul class="flex items-center ms-[239px] mb-[11px] gap-10">
             <li class="text-white text-18px font-bold">
                 <a href="{{ action([\App\Http\Controllers\NftController::class, 'index']) }}" class="leading-[26px]" >Home</a>
             </li>
             <li class="text-white text-18px font-bold leading-[26px]">
-                <a href="#" class="flex items-center gap-[6px] Leading-[26px]">Explore 
+                <a href="{{ action([\App\Http\Controllers\NftExploreController::class, 'index']) }}" class="flex items-center gap-[6px] Leading-[26px]">Explore 
                     <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4.99997 5.85012C4.82075 5.85012 4.64155 5.78169 4.50492 5.64512L0.205141 1.3453C-0.0683805 1.07178 -0.0683805 0.628311 0.205141 0.3549C0.478553 0.0814885 0.921933 0.0814885 1.19548 0.3549L4.99997 4.15962L8.80449 0.355033C9.07801 0.0816214 9.52135 0.0816214 9.79474 0.355033C10.0684 0.628444 10.0684 1.07191 9.79474 1.34543L5.49503 5.64525C5.35832 5.78185 5.17913 5.85012 4.99997 5.85012Z" fill="white"/>
                     </svg>
                 </a>
             </li>
             <li class="text-white text-18px font-bold leading-[26px]">
-                <a href="{{ action([\App\Http\Controllers\NftController::class, 'create']) }}" class="flex items-center gap-[6px] Leading-[26px]">Activity
+                <a href="#" class="flex items-center gap-[6px] Leading-[26px]">Activity
                     <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.99997 5.85012C4.82075 5.85012 4.64155 5.78169 4.50492 5.64512L0.205141 1.3453C-0.0683805 1.07178 -0.0683805 0.628311 0.205141 0.3549C0.478553 0.0814885 0.921933 0.0814885 1.19548 0.3549L4.99997 4.15962L8.80449 0.355033C9.07801 0.0816214 9.52135 0.0816214 9.79474 0.355033C10.0684 0.628444 10.0684 1.07191 9.79474 1.34543L5.49503 5.64525C5.35832 5.78185 5.17913 5.85012 4.99997 5.85012Z" fill="white"/>
                     </svg>

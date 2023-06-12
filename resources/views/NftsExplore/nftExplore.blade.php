@@ -5,13 +5,13 @@
     </x-axies.nav>
     <x-axies.header>
         <x-slot name='title'>
-            Create Item
+            Explore 4
         </x-slot>
         <x-slot name='subTitle'>
-            Create Item
+            Explore 4
         </x-slot>
     </x-axies.header>
-    <x-axies.createItem></x-axies.createItem>
+    <x-axies.exploreItem></x-axies.exploreItem>
 
     <x-axies.footer></x-axies.footer>
 @endsection
