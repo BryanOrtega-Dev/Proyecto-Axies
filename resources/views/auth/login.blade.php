@@ -2,11 +2,14 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
+    <h4 class="font-bold text-4xl leading-[44px] text-white">Login to NFTs</h4>
+    <span class="mt-16 font-normal text-lg leading-7 text-secundary-white">Or login with email</span>
+
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
         <!-- Email Address -->
-        <div>
+        <div class="mt-[30px]">
             {{-- <x-input-label for="email" :value="__('Email')" /> --}}
             <x-text-input   placeholder="Your Full Name or Email" 
                             id="email" 
@@ -43,10 +46,14 @@
                     {{ __('Forgot password?') }}
                 </a>
             @endif
+
+            <a class="text-15px  leading-[22px] text-white hover:opacity-70 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
+                {{ __('Already Sign In?') }}
+            </a>
         </div>
 
-        <div class=" mt-12">
-            <x-primary-button class="">
+        <div class=" mt-8 mb-[72px]">
+            <x-primary-button class="px-[325px]">
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
