@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Collection;
 use App\Models\Item;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -27,10 +28,11 @@ class ItemController extends Controller
         $collections = Collection::all();
         $categories = Category::all();
 
-        return view('Items.nftCreate', [
-            'collections' => $collections,
-            'categories' => $categories
-        ]);
+        return view('Items.nftCreate', compact('collections', 'categories'));
+        // return view('components.axies.createItem', [
+        //     'collections' => $collections,
+        //     'categories' => $categories,
+        // ]);
 
         // return view(dd($categories));
     }
@@ -38,7 +40,7 @@ class ItemController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $userId = Auth :: id();
 
@@ -59,7 +61,7 @@ class ItemController extends Controller
 
         Item::query()->create($data);
 
-
+        return back();
 
     }
 

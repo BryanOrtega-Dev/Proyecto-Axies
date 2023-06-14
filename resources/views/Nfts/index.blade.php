@@ -4,6 +4,16 @@
     <x-axies.nav class="" id="2">
     </x-axies.nav>
     <x-axies.homepage></x-axies.homepage>
+    {{-- <div class="text-white">
+        @foreach ($items as $item)
+            <p>{{$item->user_id}}</p>
+        @endforeach
+    </div> --}}
+    <div>
+        @foreach ($categories as $category)
+            <p>{{$category->name}}</p>
+        @endforeach
+    </div>
     <div class="pt-[60px] flex flex-col bg-[#0D0D11]">
         <div class="px-[255px] flex justify-between items-center">
             <h4 class="font-bold text-36px leading-[44px] text-white">Live Auctions</h4>

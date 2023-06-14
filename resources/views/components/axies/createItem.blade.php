@@ -59,7 +59,7 @@
                     <label class="text-white text-xl leading-[22px] font-bold" for="collection_id">Collection</label>
                     <select class="outline-none rounded-lg bg-transparent border border-secundary-grey py-[11px] ps-5 text-14px leading-[22px] font-normal text-white-2" name="collection_id" id="collection_id">
                         {{-- @foreach ($collections as $collection)
-                            <option value="{{$collection->id}}">{{$collection->name}}</option>
+                            @dd($collection)
                         @endforeach --}}
                         <option value="1">1</option>
                         <option value="2">2</option>

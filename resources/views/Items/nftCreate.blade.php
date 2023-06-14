@@ -11,6 +11,9 @@
             Create Item
         </x-slot>
     </x-axies.header>
+     {{-- @foreach ($categories as $category)
+        <p class="text-white">{{$category->name}}</p>
+    @endforeach --}}
     <x-axies.createItem></x-axies.createItem>
 
     <x-axies.footer></x-axies.footer>

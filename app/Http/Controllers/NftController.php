@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Item;
 use App\Models\Nft;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -13,7 +15,10 @@ class NftController extends Controller
      */
     public function index():View
     {
-        return  view('Nfts.index');
+        $items = Item::query()->get();
+        $categories = Category::query()->get();
+
+        return  view('Nfts.index', compact('items', 'categories'));
     }
 
     /**
