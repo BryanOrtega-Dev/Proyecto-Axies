@@ -21,7 +21,7 @@
                             
                         <span class="text-15px font-bold leading-[22px] text-white">Explore</span>
                     </a>
-                    <a class="border w-[154px] justify-center py-[14px] rounded-[30px] bg-white flex gap-2 items-center" href="{{ action([\App\Http\Controllers\NftController::class, 'create']) }}">
+                    <a class="border w-[154px] justify-center py-[14px] rounded-[30px] bg-white flex gap-2 items-center" href="{{ action([\App\Http\Controllers\ItemController::class, 'create']) }}">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_201_1122)">
                             <path d="M0.00889133 14.3331C-0.0180618 14.4861 0.016821 14.6436 0.105962 14.7709C0.195063 14.8982 0.331157 14.9849 0.484204 15.0118L3.08487 15.4704L1.44663 6.17929L0.00889133 14.3331Z" fill="#5142FC"/>

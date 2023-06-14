@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\NftController;
 use App\Http\Controllers\NftExploreController;
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,5 +34,7 @@ Route::middleware('auth')->group(function () {
 Route::resource('Nfts', NftController::class);
 
 Route::resource('NftsExplore', NftExploreController::class);
+
+Route::resource('Items', ItemController::class);
 
 require __DIR__.'/auth.php';

@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Collection;
 use App\Models\Item;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 
 class ItemController extends Controller
 {
@@ -12,15 +16,23 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create():view
     {
-        //
+        $collections = Collection::all();
+        $categories = Category::all();
+
+        return view('Items.nftCreate', [
+            'collections' => $collections,
+            'categories' => $categories
+        ]);
+
+        // return view(dd($categories));
     }
 
     /**
@@ -28,7 +40,27 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $userId = Auth :: id();
+
+
+        
+        $data = $request->validate([
+            'title' => [],
+            'price' => [],
+            'description' => [],
+            'royalty' => [],
+            'category_id' => [],
+            'collection_id'=> [],
+        ]);
+
+        $data['user_id'] = $userId;
+
+        // dd($data);
+
+        Item::query()->create($data);
+
+
+
     }
 
     /**
