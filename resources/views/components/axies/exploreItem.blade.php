@@ -242,11 +242,24 @@
         </div>
     </div>
     <div class="flex flex-wrap gap-[38px]">
-        <x-axies.itemExplore></x-axies.itemExplore>
-        <x-axies.itemExplore></x-axies.itemExplore>
-        <x-axies.itemExplore></x-axies.itemExplore>
-        <x-axies.itemExplore></x-axies.itemExplore>
-        <x-axies.itemExplore></x-axies.itemExplore>
-        <x-axies.itemExplore></x-axies.itemExplore>
+        @foreach ($items as $item)
+            @if ($loop->iteration < 7)
+                <x-axies.itemExplore>
+                    <x-slot name='media'>
+                        <img src="{{ $item->getFirstMediaUrl() }}" class="object-cover rounded-Twenty absolute w-[290px] h-[290px]"  alt="">
+                    </x-slot>
+                    <x-slot name='titulo'>
+                        {{$item->title}}
+                    </x-slot>
+                    <x-slot name='precio'>
+                        {{$item->price}}
+                    </x-slot>
+                    <x-slot name='img'>
+                        {{$item->id}}
+                    </x-slot>
+                    
+                </x-axies.itemExplore>
+                @endif            
+        @endforeach
     </div>
 </div>

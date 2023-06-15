@@ -1,7 +1,11 @@
 <div class="px-[255px] py-20 flex gap-20">
     <div class="flex flex-col gap-5">
         <h6 class="text-white text-xl leading-[26px] font-bold gap">Preview item</h6>
-        <x-axies.itemCreate></x-axies.itemCreate>
+        <x-axies.itemCreate>
+            <x-slot name="img">
+                <img id="output" class="object-cover rounded-Twenty absolute w-[290px] h-[290px]"  alt="">
+            </x-slot>
+        </x-axies.itemCreate>
     </div>
     <div>
         <form class="flex flex-col gap-5" action="{{ action([\App\Http\Controllers\ItemController::class, 'store']) }}" method="post" enctype="multipart/form-data">
@@ -41,29 +45,22 @@
             <div class="flex gap-5">
                 <div class="w-[318px] flex flex-col gap-5">
                     <label class="text-white text-xl leading-[22px] font-bold" for="royalty">Royalties</label>
-                    <input class="outline-none rounded-lg bg-transparent border border-secundary-grey py-[11px] ps-5 text-14px leading-[22px] font-normal text-white-2" type="text" name="royalty" id="royalty" placeholder="5%">
+                    <input class="outline-none rounded-lg bg-transparent border border-secundary-grey py-[11px] ps-5 text-14px leading-[22px] font-normal text-white-2" type="number" step="0.01" name="royalty" id="royalty" placeholder="5%">
                 </div>
                 <div class="w-[318px] flex flex-col gap-5">
                     <label class="text-white text-xl leading-[22px] font-bold" for="category_id">Category</label>
                     <select class="outline-none rounded-lg bg-transparent border border-secundary-grey py-[11px] ps-5 text-14px leading-[22px] font-normal text-white-2" name="category_id" id="category_id">
-                        {{-- @foreach ($categories as $category)
+                        @foreach ($categories as $category)
                             <option value="{{$category->id}}">{{$category->name}}</option>
-                        @endforeach --}}
-        
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="w-[318px] flex flex-col gap-5">
                     <label class="text-white text-xl leading-[22px] font-bold" for="collection_id">Collection</label>
                     <select class="outline-none rounded-lg bg-transparent border border-secundary-grey py-[11px] ps-5 text-14px leading-[22px] font-normal text-white-2" name="collection_id" id="collection_id">
-                        {{-- @foreach ($collections as $collection)
-                            @dd($collection)
-                        @endforeach --}}
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
+                        @foreach ($collections as $collection)
+                            <option value="{{$collection->id}}">{{$collection->name}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -83,6 +80,14 @@
             price.addEventListener("input",()=>{
                 priceShow.innerText=price.value;
             })
+
+            var loadFile = function(event) {
+                var output = document.getElementById('output');
+                output.src = URL.createObjectURL(event.target.files[0]);
+                output.onload = function() {
+                    URL.revokeObjectURL(output.src) // free memory
+                }
+            };
         </script>
     </div>
 </div>

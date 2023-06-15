@@ -17,24 +17,17 @@ class ItemController extends Controller
      */
     public function index()
     {
-        
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create():view
+    public function create(): view
     {
         $collections = Collection::all();
         $categories = Category::all();
 
         return view('Items.nftCreate', compact('collections', 'categories'));
-        // return view('components.axies.createItem', [
-        //     'collections' => $collections,
-        //     'categories' => $categories,
-        // ]);
-
-        // return view(dd($categories));
     }
 
     /**
@@ -42,27 +35,29 @@ class ItemController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        $userId = Auth :: id();
+        $userId = Auth::id();
 
 
-        
+
         $data = $request->validate([
             'title' => [],
             'price' => [],
             'description' => [],
             'royalty' => [],
             'category_id' => [],
-            'collection_id'=> [],
+            'collection_id' => [],
         ]);
 
         $data['user_id'] = $userId;
 
         // dd($data);
 
-        Item::query()->create($data);
+        $item = Item::query()->create($data);
+        $item->addMediaFromRequest('image')
+            ->toMediaCollection();
+
 
         return back();
-
     }
 
     /**
