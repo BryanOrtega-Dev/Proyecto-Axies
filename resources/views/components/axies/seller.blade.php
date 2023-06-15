@@ -8,7 +8,7 @@
         </div>
     </div>
     <div>
-        <h4 class="text-4 font-bold leading-[26px] text-white">Crispin Berry</h4>
+        <h4 class="text-4 font-bold leading-[26px] text-white">{{$user ?? 'Crispin Berry'}}</h4>
         <h5 class="text-white text-14px leading-[22px] font-bold">214.2 ETH</h5>
     </div>
 </div>

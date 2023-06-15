@@ -81,13 +81,13 @@
                 priceShow.innerText=price.value;
             })
 
-            var loadFile = function(event) {
-                var output = document.getElementById('output');
-                output.src = URL.createObjectURL(event.target.files[0]);
-                output.onload = function() {
-                    URL.revokeObjectURL(output.src) // free memory
-                }
-            };
+            const pictureInput = document.getElementById("upload_file")
+            const picureOutput = document.getElementById("output")
+            pictureInput.addEventListener("change", ()=>{
+                console.log(pictureInput.files[0]);
+                const file = pictureInput.files[0];
+                picureOutput.src = URL.createObjectURL(file)
+            })
         </script>
     </div>
 </div>

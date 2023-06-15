@@ -8,7 +8,11 @@
     </div>
     <h4 class="mt-[21px] mb-[17px] text-white font-bold text-18px leading-[26px]">"{{$titulo ?? 'Nothing'}}"</h4>
     <div class="flex items-center justify-between mb-[19px]">
-        <x-axies.creatorName></x-axies.creatorName>
+        <x-axies.creatorName>
+            <x-slot name="nameUser">
+                {{$nameUsers}}
+            </x-slot>
+        </x-axies.creatorName>
     </div>
     <div>
         <div class="flex items-center justify-between pt-[15px] border-t border-like-color">

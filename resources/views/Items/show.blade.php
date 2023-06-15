@@ -1,17 +1,16 @@
 @extends('layouts.main')
 
 @section('main')
-    <x-axies.nav class="bg-secundary-grey bg-opacity-70" id="2">
+    <x-axies.nav class="">
     </x-axies.nav>
     <x-axies.header>
         <x-slot name='title'>
-            Create Item
+            Explore
         </x-slot>
         <x-slot name='subTitle'>
-            Create Item
+            Item Detail
         </x-slot>
     </x-axies.header>
-    <x-axies.createItem></x-axies.createItem>
-
+    <x-axies.itemDetail></x-axies.itemDetail>
     <x-axies.footer></x-axies.footer>
 @endsection

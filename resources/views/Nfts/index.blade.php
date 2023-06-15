@@ -4,29 +4,28 @@
     <x-axies.nav class="" id="2">
     </x-axies.nav>
     <x-axies.homepage></x-axies.homepage>
-    {{-- <div class="text-white">
-        @foreach ($items as $item)
-            <p>{{$item->user_id}}</p>
-        @endforeach
-    </div> --}}
-    <div>
-        @foreach ($categories as $category)
-            <p>{{$category->name}}</p>
-        @endforeach
-    </div>
     <div class="pt-[60px] flex flex-col bg-[#0D0D11]">
         <div class="px-[255px] flex justify-between items-center">
             <h4 class="font-bold text-36px leading-[44px] text-white">Live Auctions</h4>
             <a class="font-bold text-white text-14px leading-5" href="#">Explore more</a>
         </div>
-        <div class="flex gap-[30px] mt-10 overflow-hidden">
-            <x-axies.itemLive></x-axies.itemLive>
-            <x-axies.itemLive></x-axies.itemLive>
-            <x-axies.itemLive></x-axies.itemLive>
-            <x-axies.itemLive></x-axies.itemLive>
-            <x-axies.itemLive></x-axies.itemLive>
-            <x-axies.itemLive></x-axies.itemLive>
-            <x-axies.itemLive></x-axies.itemLive>
+        <div class="flex gap-[30px] mt-10 overflow-auto">
+            @foreach ($items as $item)
+                <x-axies.itemLive>
+                    <x-slot name='media'>
+                        <img src="{{ $item->getFirstMediaUrl() }}" class="object-cover rounded-Twenty absolute w-[290px] h-[290px]"  alt="">
+                    </x-slot>
+                    <x-slot name='titulo'>
+                        {{$item->title}}
+                    </x-slot>
+                    <x-slot name='nameUsers'>
+                        {{$item->user->name}}
+                    </x-slot>
+                    <x-slot name='precio'>
+                        {{$item->price}}
+                    </x-slot>
+                </x-axies.itemLive>
+            @endforeach
         </div>
         <div class="flex justify-center items-start mt-[38px] pb-20">
             <button class="me-5" >
@@ -71,33 +70,45 @@
     <div class="px-[255px] mt-20 pb-20">
         <h4 class="font-bold text-36px leading-[44px] text-white">Top Seller</h4>
         <div class="flex flex-wrap mt-10 gap-x-[86px] gap-y-7">
-            <x-axies.seller></x-axies.seller>
-            <x-axies.seller></x-axies.seller>
-            <x-axies.seller></x-axies.seller>
-            <x-axies.seller></x-axies.seller>
-            <x-axies.seller></x-axies.seller>
-            <x-axies.seller></x-axies.seller>
-            <x-axies.seller></x-axies.seller>
-            <x-axies.seller></x-axies.seller>
-            <x-axies.seller></x-axies.seller>
-            <x-axies.seller></x-axies.seller>
+            @foreach ($users as $user)
+                @if ($loop->iteration > 7)
+                    <x-axies.seller>
+                        <x-slot name="user">
+                            {{$user->name}}
+                        </x-slot>
+                    </x-axies.seller>
+                    
+                @endif
+                
+            @endforeach
             
         </div>
     </div>
     <div class="px-[255px] flex flex-col">
         <div class="flex justify-between items-center">
             <h4 class="font-bold text-36px leading-[44px] text-white">Today's Picks</h4>
+            
             <a class="font-bold text-white text-14px leading-5" href="#">Explore more</a>
         </div>
         <div class="flex gap-x-[30px] gap-y-10 flex-wrap mt-10">
-            <x-axies.itemToday></x-axies.itemToday>
-            <x-axies.itemToday></x-axies.itemToday>
-            <x-axies.itemToday></x-axies.itemToday>
-            <x-axies.itemToday></x-axies.itemToday>
-            <x-axies.itemToday></x-axies.itemToday>
-            <x-axies.itemToday></x-axies.itemToday>
-            <x-axies.itemToday></x-axies.itemToday>
-            <x-axies.itemToday></x-axies.itemToday>
+            @foreach ($items as $item) 
+                @if ($loop->iteration < 9)
+                    <x-axies.itemToday>
+                        <x-slot name='media'>
+                            <img src="{{ $item->getFirstMediaUrl() }}" class="object-cover rounded-Twenty absolute w-[290px] h-[290px]"  alt="">
+                        </x-slot>
+                        <x-slot name='titulo'>
+                            {{$item->title}}
+                        </x-slot>
+                        <x-slot name='nameUsers'>
+                            {{$item->user->name}}
+                        </x-slot>
+                        <x-slot name='precio'>
+                            {{$item->price}}
+                        </x-slot>
+                    </x-axies.itemToday>
+                @endif
+            @endforeach
         </div>
         <button class="mt-[37px] w-[154px] h-[54px] mb-20 ms-[628px] bg-transparent border border-white rounded-thirty px-10 py-4">
             <span class="text-white text-15px leading-[22px]">Load More</span>

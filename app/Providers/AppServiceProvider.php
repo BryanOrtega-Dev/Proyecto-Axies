@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Category;
 use App\Models\Collection;
 use App\Models\Item;
+use App\Models\User;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -31,5 +32,10 @@ class AppServiceProvider extends ServiceProvider
 
         $items = Item::query()->get();
         view()->share(compact('items'));
+
+        $users = User::query()->get();
+        view()->share(compact('users'));
+        
+
     }
 }
