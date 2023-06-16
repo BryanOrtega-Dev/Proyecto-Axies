@@ -26,7 +26,7 @@
                 <h5 class="text-white-2 text-[13px] leading-5 font-normal">Current Bid</h5>
                 <h4 class="text-white text-18px leading-[26px] font-bold">{{$precio ?? '4.89'}} ETH <span class="text-white-2 text-[13px] leading-5 font-normal">= $12.246</span></h4> 
             </div>
-            <x-axies.viewHistory></x-axies.viewHistory>
+            {{$view}}
         </div>
     </div>
 </div>

@@ -15,8 +15,9 @@ class ItemController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index():View
     {
+        return view('Item.index');
     }
 
     /**
@@ -27,7 +28,7 @@ class ItemController extends Controller
         $collections = Collection::all();
         $categories = Category::all();
 
-        return view('Items.nftCreate', compact('collections', 'categories'));
+        return view('Item.nftCreate', compact('collections', 'categories'));
     }
 
     /**
@@ -63,9 +64,9 @@ class ItemController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Item $item)
+    public function show(Item $Item)
     {
-        return view('Items.nftCreate');
+        return view('Item.show', compact('Item'));
     }
 
     /**

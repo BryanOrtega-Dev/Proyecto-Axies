@@ -1,7 +1,7 @@
 <div class="flex gap-[100px] px-[255px] py-20">
     <div class="w-[690px] h-[690px] bg-white-3 rounded-ten"></div>
     <div>
-        <h4 class="text-white font-bold text-36px leading-[44px] mb-4">“The Fantasy Flower illustration ”</h4>
+        <h4 class="text-white font-bold text-36px leading-[44px] mb-4">“{{$title ?? 'The Fantasy Flower illustration'}}”</h4>
         <div class="flex">
             <div class="flex gap-3 me-[377px]">
                 <button class="flex items-center h-9 justify-center bg-secundary-grey rounded-[40px] px-[14px] py-[7px]">
@@ -44,7 +44,7 @@
             <x-axies.creatorName></x-axies.creatorName>
         </div>
         <p class="text-white font-normal text-14px leading-[22px] w-[620px]">
-            Habitant sollicitudin faucibus cursus lectus pulvinar dolor non ultrices eget. Facilisi lobortisal morbi fringilla urna amet sed ipsum vitae ipsum malesuada. Habitant sollicitudin faucibus cursus lectus pulvinar dolor non ultrices eget. Facilisi lobortisal morbi fringilla urna amet sed ipsum
+            {{$desc ?? 'Habitant sollicitudin faucibus cursus lectus pulvinar dolor non ultrices eget. Facilisi lobortisal morbi fringilla urna amet sed ipsum vitae ipsum malesuada. Habitant sollicitudin faucibus cursus lectus pulvinar dolor non ultrices eget. Facilisi lobortisal morbi fringilla urna amet sed ipsum'}}
         </p>
         <div class="bg-secundary-grey py-3 px-6 flex items-center justify-between w-[295px] rounded-lg mt-5">
             <span class="text-15px leading-[26px] font-semibold text-secundary-white">Price</span>
@@ -59,10 +59,26 @@
         <a class="font-bold text-white text-14px leading-5" href="#">Explore more</a>
     </div>
     <div class="flex gap-[30px] mt-10">
-        <x-axies.itemAuthor></x-axies.itemAuthor>
-        <x-axies.itemAuthor></x-axies.itemAuthor>
-        <x-axies.itemAuthor></x-axies.itemAuthor>
-        <x-axies.itemAuthor></x-axies.itemAuthor>
+        @foreach ($items as $item)
+            @if ($loop->iteration <5)
+                <x-axies.itemAuthor>
+                    <x-slot name='media'>
+                        <img src="{{ $item->getFirstMediaUrl() }}" class="object-cover rounded-Twenty absolute w-[290px] h-[290px]"  alt="">
+                    </x-slot>
+                    <x-slot name="price">
+                        {{$item->price}}
+                    </x-slot>
+                    <x-slot name="title">
+                        {{$item->title}}
+                    </x-slot>
+                    <x-slot name="user">
+                        {{$item->user->name}}
+                    </x-slot>
+                </x-axies.itemAuthor>
+            @endif
+            
+        @endforeach
+        
     </div>
     <div class="flex justify-center items-start mt-[38px] pb-20">
         <button class="me-5" >

@@ -18,7 +18,7 @@ class NftController extends Controller
         $items = Item::query()->get();
         $categories = Category::query()->get();
 
-        return  view('Nfts.index', compact('items', 'categories'));
+        return  view('Nft.index', compact('items', 'categories'));
     }
 
     /**

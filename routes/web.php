@@ -20,10 +20,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('Nfts', NftController::class);
+Route::resource('Item', ItemController::class);
+Route::resource('Nft', NftController::class);
 
-Route::resource('NftsExplore', NftExploreController::class);
+Route::resource('NftExplore', NftExploreController::class);
 
-Route::resource('Items', ItemController::class);
 
 require __DIR__.'/auth.php';

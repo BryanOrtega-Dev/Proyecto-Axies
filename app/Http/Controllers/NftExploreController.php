@@ -13,7 +13,7 @@ class NftExploreController extends Controller
      */
     public function index():View
     {
-        return view('NftsExplore.nftExplore');
+        return view('NftExplore.nftExplore');
     }
 
     /**
