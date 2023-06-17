@@ -67,9 +67,10 @@ class ItemController extends Controller
     public function show(Item $Item)
     {
             $userId = $Item->user_id;
+            $itemId = $Item->id;
             $userItems = Item::where('user_id', $userId)->get();
 
-        return view('Item.show', compact('Item', 'userItems'));
+        return view('Item.show', compact('Item', 'userItems', 'itemId'));
     }
 
     /**

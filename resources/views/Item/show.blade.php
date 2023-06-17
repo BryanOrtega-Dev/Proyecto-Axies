@@ -31,26 +31,32 @@
     <div class="px-[255px]">
         <div class="flex justify-between items-center">
             <h4 class="font-bold text-36px leading-[44px] text-white">More from this author</h4>
-            <a class="font-bold text-white text-14px leading-5" href="#">Explore more</a>
+            <a class="font-bold text-white text-14px leading-5" href="{{ action([\App\Http\Controllers\NftExploreController::class, 'index']) }}">Explore more</a>
         </div>
         <div class="flex gap-[30px] mt-10">
             {{-- @dd($Item) --}}
             {{-- @dd($userItems) --}}
             @foreach ($userItems as $item)
-                <x-axies.itemAuthor>
-                    <x-slot name='media'>
-                        <img src="{{ $item->getFirstMediaUrl() }}" class="object-cover rounded-Twenty absolute w-[290px] h-[290px]"  alt="">
-                    </x-slot>
-                    <x-slot name="price">
-                        {{$item->price}}
-                    </x-slot>
-                    <x-slot name="title">
-                        {{$item->title}}
-                    </x-slot>
-                    <x-slot name="user">
-                        {{$item->user->name}}
-                    </x-slot>
-                </x-axies.itemAuthor>
+                @if ($item->id !== $itemId)
+                    <a href="{{ action([\App\Http\Controllers\ItemController::class, 'show'], ['Item' => $item]) }}">
+                        <x-axies.itemAuthor>
+                            <x-slot name='media'>
+                                <img src="{{ $item->getFirstMediaUrl() }}" class="object-cover rounded-Twenty absolute w-[290px] h-[290px]"  alt="">
+                            </x-slot>
+                            <x-slot name="price">
+                                {{$item->price}}
+                            </x-slot>
+                            <x-slot name="title">
+                                {{$item->title}}
+                            </x-slot>
+                            <x-slot name="user">
+                                {{$item->user->name}}
+                            </x-slot>
+                        </x-axies.itemAuthor>
+                    
+                    </a>
+                    
+                @endif
                 
             @endforeach
             

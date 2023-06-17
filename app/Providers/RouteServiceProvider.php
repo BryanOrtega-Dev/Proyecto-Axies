@@ -17,7 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/Nfts';
+    public const HOME = '/Nft';
 
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
