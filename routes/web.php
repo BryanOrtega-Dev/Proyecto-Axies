@@ -25,5 +25,7 @@ Route::resource('Nft', NftController::class);
 
 Route::resource('NftExplore', NftExploreController::class);
 
+Route::get('Item', [ItemController::class, 'screen']);
+
 
 require __DIR__.'/auth.php';

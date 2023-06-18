@@ -15,7 +15,12 @@ class ItemController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index():View
+    public function index()
+    {
+        // return view('Item.author');
+    }
+
+    public function screen():View
     {
         return view('Item.author');
     }
