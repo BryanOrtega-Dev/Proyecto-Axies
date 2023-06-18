@@ -34,10 +34,10 @@
             <a class="font-bold text-white text-14px leading-5" href="{{ action([\App\Http\Controllers\NftExploreController::class, 'index']) }}">Explore more</a>
         </div>
         <div class="flex gap-[30px] mt-10">
-            {{-- @dd($Item) --}}
-            {{-- @dd($userItems) --}}
             @foreach ($userItems as $item)
+
                 @if ($item->id !== $itemId)
+
                     <a href="{{ action([\App\Http\Controllers\ItemController::class, 'show'], ['Item' => $item]) }}">
                         <x-axies.itemAuthor>
                             <x-slot name='media'>
@@ -53,7 +53,6 @@
                                 {{$item->user->name}}
                             </x-slot>
                         </x-axies.itemAuthor>
-                    
                     </a>
                     
                 @endif

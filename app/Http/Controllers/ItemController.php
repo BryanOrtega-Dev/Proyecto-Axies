@@ -17,7 +17,7 @@ class ItemController extends Controller
      */
     public function index():View
     {
-        return view('Item.index');
+        return view('Item.author');
     }
 
     /**
@@ -61,16 +61,14 @@ class ItemController extends Controller
         return back();
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Item $Item)
     {
             $userId = $Item->user_id;
             $itemId = $Item->id;
             $userItems = Item::where('user_id', $userId)->get();
+            $idCount = Item::count('id');
 
-        return view('Item.show', compact('Item', 'userItems', 'itemId'));
+        return view('Item.show', compact('Item', 'userItems', 'itemId', 'idCount'));
     }
 
     /**

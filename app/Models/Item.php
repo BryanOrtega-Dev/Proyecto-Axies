@@ -26,4 +26,9 @@ class Item extends Model implements HasMedia
     {
         return $this->belongsTo(User::class);
     }
+
+    public function collection():BelongsTo
+    {
+        return $this->belongsTo(Collection::class);
+    }
 }

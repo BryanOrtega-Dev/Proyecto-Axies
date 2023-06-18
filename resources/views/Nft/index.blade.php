@@ -13,7 +13,7 @@
             @foreach ($items as $item)
                 <x-axies.itemLive>
                     <x-slot name='media'>
-                        <img src="{{ $item->getFirstMediaUrl() }}" class="object-cover rounded-Twenty absolute w-[290px] h-[290px]"  alt="">
+                        <img src="{{ $item->getFirstMediaUrl() }}" class="object-cover rounded-Twenty absolute w-[290px] h-[290px]"  alt="{{$item->title}}">
                     </x-slot>
                     <x-slot name='titulo'>
                         {{$item->title}}
@@ -95,7 +95,7 @@
                 @if ($loop->iteration < 9)
                     <x-axies.itemToday>
                         <x-slot name='media'>
-                            <img src="{{ $item->getFirstMediaUrl() }}" class="object-cover rounded-Twenty absolute w-[290px] h-[290px]"  alt="">
+                            <img src="{{ $item->getFirstMediaUrl() }}" class="object-cover rounded-Twenty absolute w-[290px] h-[290px]"  alt="{{$item->title}}">
                         </x-slot>
                         <x-slot name='titulo'>
                             {{$item->title}}
@@ -123,16 +123,5 @@
             <span class="text-white text-15px leading-[22px]">Load More</span>
         </button>
     </div>
-    {{-- Author --}}
-    {{-- <x-axies.autorProfile></x-axies.autorProfile> --}}
-    {{-- item Deteil --}}
-    {{-- <x-axies.itemDetail></x-axies.itemDetail> --}}
-    {{-- itemCreate--}}
-    {{-- <x-axies.createItem></x-axies.createItem> --}}
-    {{-- exploreItem --}}
-    {{-- <x-axies.exploreItem></x-axies.exploreItem> --}}
-    {{-- <x-axies.itemLive></x-axies.itemLive> --}}
-    {{-- <x-axies.itemAuthor></x-axies.itemAuthor> --}}
-
     <x-axies.footer></x-axies.footer>
 @endsection

@@ -164,7 +164,7 @@
     <div class="flex flex-wrap gap-[38px]">
         @foreach ($items as $item)
         {{-- <p class="text-white">Usuario: </p> --}}
-            @if ($loop->iteration < 10)
+            @if ($loop->iteration < 7)
                     <x-axies.itemExplore>
                         <x-slot name='media'>
                             <img src="{{ $item->getFirstMediaUrl() }}" class="object-cover rounded-Twenty absolute w-[290px] h-[290px]"  alt="">
@@ -186,3 +186,6 @@
         @endforeach
     </div>
 </div>
+<button class="w-[154px] h-[54px] mb-20 ms-[1063px] bg-transparent border border-white rounded-thirty px-10 py-4">
+    <span class="text-white text-15px leading-[22px]">Load More</span>
+</button>
