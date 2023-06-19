@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Collection;
 use App\Models\Item;
 use App\Models\Nft;
 use Illuminate\Http\Request;
@@ -17,6 +18,15 @@ class NftController extends Controller
     {
         $items = Item::query()->get();
         $categories = Category::query()->get();
+
+        // $collections = Collection::query()->get(); // Obtener todas las colecciones
+    
+        // $itemCollection = [];
+
+        // foreach ($collections as $collection) {
+        //     $items = Item::where('collection_id', $collection->id)->get();
+        //     $itemCollection[$collection->id] = $items;
+        // }
 
         return  view('Nft.index', compact('items', 'categories'));
     }

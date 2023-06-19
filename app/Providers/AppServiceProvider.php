@@ -34,10 +34,14 @@ class AppServiceProvider extends ServiceProvider
         $items = Item::query()->get();
         view()->share(compact('items'));
 
-        $users = User::all();
+        $users = User::query()->get();
         view()->share(compact('users'));
 
         Model::unguard();
+
+        Model::shouldBeStrict(
+            $this->app->environment('production')
+        );
         
 
     }

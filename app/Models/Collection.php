@@ -11,9 +11,9 @@ class Collection extends Model
 {
     use HasFactory;
 
-    public function user():BelongsTo
+    public function user():HasMany
     {
-        return $this->belongsTo(User::class);
+        return $this->hasMany(User::class);
     }
 
     public function item():HasMany

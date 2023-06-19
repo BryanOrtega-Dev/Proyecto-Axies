@@ -1,4 +1,4 @@
-<div class=" flex flex-col bg-secundary-grey rounded-Twenty p-5 w-[330px]">
+<div {{$attributes->class(['flex flex-col bg-secundary-grey rounded-Twenty p-5 w-[330px]'])}}>
     <div class="w-[290px] h-[290px] bg-white-3 rounded-Twenty relative">
         {{$media ?? ''}}
         <div class="absolute top-[14px] left-3">

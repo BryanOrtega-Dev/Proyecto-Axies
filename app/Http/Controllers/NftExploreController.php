@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
 use App\Models\NftExplore;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -13,7 +14,8 @@ class NftExploreController extends Controller
      */
     public function index():View
     {
-        return view('NftExplore.nftExplore');
+        $items = Item::query()->get();
+        return view('NftExplore.nftExplore', compact('items'));
     }
 
     /**

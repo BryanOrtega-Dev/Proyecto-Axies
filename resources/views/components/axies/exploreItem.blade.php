@@ -1,7 +1,7 @@
 <div class="ps-[255px] py-20 flex gap-20">
     <div class="flex flex-col w-[280px]">
         <div class="py-6 border-b border-secundary-grey">
-            <button class="flex items-center">
+            <button id="dropCategories" class="flex items-center">
                 <span class="text-white text-xl font-bold/ me-[155px]">Categories</span>
                 <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M11.2902 0.309656C11.1977 0.216953 11.0878 0.143405 10.9668 0.0932235C10.8459 0.0430421 10.7162 0.0172119 10.5852 0.0172119C10.4543 0.0172119 10.3246 0.043042 10.2036 0.0932235C10.0826 0.143405 9.97274 0.216952 9.88022 0.309656L6.00022 4.18965L2.12022 0.309656C1.93324 0.122678 1.67965 0.0176349 1.41522 0.0176349C1.1508 0.0176349 0.8972 0.122678 0.710222 0.309656C0.523244 0.496633 0.418203 0.750229 0.418203 1.01466C0.418203 1.27908 0.523244 1.53268 0.710222 1.71966L5.30022 6.30965C5.39274 6.40236 5.50262 6.47591 5.6236 6.52609C5.74457 6.57627 5.87425 6.6021 6.00522 6.6021C6.13619 6.6021 6.26587 6.57627 6.38685 6.52609C6.50782 6.47591 6.61771 6.40236 6.71022 6.30965L11.3002 1.71966C11.6802 1.33966 11.6802 0.699656 11.2902 0.309656Z" fill="white"/>
@@ -163,9 +163,8 @@
     </div>
     <div class="flex flex-wrap gap-[38px]">
         @foreach ($items as $item)
-        {{-- <p class="text-white">Usuario: </p> --}}
-            @if ($loop->iteration < 7)
-                    <x-axies.itemExplore>
+            @if ($loop->iteration <= 3)
+                    <x-axies.itemExplore id='load-item'>
                         <x-slot name='media'>
                             <img src="{{ $item->getFirstMediaUrl() }}" class="object-cover rounded-Twenty absolute w-[290px] h-[290px]"  alt="">
                         </x-slot>
@@ -178,14 +177,63 @@
                         <x-slot name='nameUsers'>
                             {{ $item->user->name}}
                         </x-slot>
-
-                        {{-- {{$item->user_id->user}} --}}
-                        
                     </x-axies.itemExplore>
+            @else 
+                <x-axies.itemExplore id='load-item' class="hidden">
+                    <x-slot name='media'>
+                        <img src="{{ $item->getFirstMediaUrl() }}" class="object-cover rounded-Twenty absolute w-[290px] h-[290px]"  alt="">
+                    </x-slot>
+                    <x-slot name='titulo'>
+                        {{$item->title}}
+                    </x-slot>
+                    <x-slot name='precio'>
+                        {{$item->price}}
+                    </x-slot>
+                    <x-slot name='nameUsers'>
+                        {{ $item->user->name}}
+                    </x-slot>
+                </x-axies.itemExplore>
             @endif            
         @endforeach
     </div>
 </div>
-<button class="w-[154px] h-[54px] mb-20 ms-[1063px] bg-transparent border border-white rounded-thirty px-10 py-4">
+<button id="load-more-button" class="w-[154px] h-[54px] mb-20 ms-[1063px] bg-transparent border border-white rounded-thirty px-10 py-4">
     <span class="text-white text-15px leading-[22px]">Load More</span>
 </button>
+<Script>
+    let loadMoreButton = document.getElementById('load-more-button');
+    let loadItems = document.querySelectorAll('[id="load-item"]');
+    let currentIndex = 0;
+    let itemsPerLoad = 3;
+
+    function showNextItems() {
+        // for (let i = currentIndex; i < currentIndex + itemsPerLoad; i++) {
+        //     if (loadItems[i]) {
+        //         loadItems[i].classList.remove('hidden');
+        //     }
+        // }
+
+        loadItems.forEach((item, index) => {
+        if (index >= currentIndex && index < currentIndex + itemsPerLoad) {
+            item.classList.remove('hidden');
+        }
+        });
+
+
+        currentIndex += itemsPerLoad;
+
+        // Oculta el botón "Load More" si se han mostrado todos los elementos
+        if (currentIndex >= loadItems.length) {
+            loadMoreButton.classList.add('hidden');
+        }
+    }
+
+    // Muestra los primeros elementos al cargar la página
+    showNextItems(); 
+
+    // Agrega un escucha de evento al botón "Load More"
+    loadMoreButton.addEventListener('click', function () {
+        showNextItems();
+    });
+
+</Script>

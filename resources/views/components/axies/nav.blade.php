@@ -1,4 +1,4 @@
-<div class="border-b border-white-2 border-opacity-40 sticky top-0 bg-main-color z-[2]">
+<div class="border-b border-white-2 border-opacity-40 sticky top-0 bg-main-color z-[3]">
     <nav {{$attributes->class(["flex ps-[255px] pt-4"])}}>
         {{-- Logo --}}
         <a href="{{ action([\App\Http\Controllers\NftController::class, 'index']) }}" class="flex gap-[10px]">

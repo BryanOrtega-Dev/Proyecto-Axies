@@ -17,7 +17,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        // return view('Item.author');
+        return view('Item.author');
     }
 
     public function screen():View
@@ -30,10 +30,10 @@ class ItemController extends Controller
      */
     public function create(): view
     {
-        $collections = Collection::all();
-        $categories = Category::all();
+        // $collections = Collection::all();
+        // $categories = Category::all();
 
-        return view('Item.nftCreate', compact('collections', 'categories'));
+        return view('Item.nftCreate');
     }
 
     /**
@@ -42,8 +42,6 @@ class ItemController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $userId = Auth::id();
-
-
 
         $data = $request->validate([
             'title' => [],
@@ -55,8 +53,6 @@ class ItemController extends Controller
         ]);
 
         $data['user_id'] = $userId;
-
-        // dd($data);
 
         $item = Item::query()->create($data);
         $item->addMediaFromRequest('image')
