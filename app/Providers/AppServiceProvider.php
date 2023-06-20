@@ -36,6 +36,15 @@ class AppServiceProvider extends ServiceProvider
 
         $users = User::query()->get();
         view()->share(compact('users'));
+    
+        $itemCollections = [];
+
+        foreach ($collections as $collection) {
+            $items = Item::where('collection_id', $collection->id)->get();
+            $itemCollections[$collection->id] = $items;
+        }
+
+        view()->share(compact('itemCollections'));
 
         Model::unguard();
 

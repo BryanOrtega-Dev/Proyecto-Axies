@@ -4,7 +4,6 @@
     <x-axies.nav class="" id="2">
     </x-axies.nav>
     <x-axies.homepage></x-axies.homepage>
-    {{-- @dump($itemCollection) --}}
     <div class="pt-[60px] flex flex-col bg-[#0D0D11]">
         <div class="px-[255px] flex justify-between items-center">
             <h4 class="font-bold text-36px leading-[44px] text-white">Live Auctions</h4>
@@ -156,11 +155,6 @@
         let itemsPerLoad = 4;
     
         function showNextItems() {
-            // for (let i = currentIndex; i < currentIndex + itemsPerLoad; i++) {
-            //     if (loadItems[i]) {
-            //         loadItems[i].classList.remove('hidden');
-            //     }
-            // }
     
             loadItems.forEach((item, index) => {
             if (index >= currentIndex && index < currentIndex + itemsPerLoad) {
@@ -171,16 +165,13 @@
     
             currentIndex += itemsPerLoad;
     
-            // Oculta el botón "Load More" si se han mostrado todos los elementos
             if (currentIndex >= loadItems.length) {
                 loadMoreButton.classList.add('hidden');
             }
         }
-    
-        // Muestra los primeros elementos al cargar la página
+
         showNextItems();
     
-        // Agrega un escucha de evento al botón "Load More"
         loadMoreButton.addEventListener('click', function () {
             showNextItems();
         });

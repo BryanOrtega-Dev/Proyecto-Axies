@@ -37,8 +37,6 @@
             @foreach ($userItems as $item)
 
                 @if ($item->id !== $itemId)
-
-                    <a href="{{ action([\App\Http\Controllers\ItemController::class, 'show'], ['Item' => $item]) }}">
                         <x-axies.itemAuthor>
                             <x-slot name='media'>
                                 <img src="{{ $item->getFirstMediaUrl() }}" class="object-cover rounded-Twenty absolute w-[290px] h-[290px]"  alt="">
@@ -53,7 +51,6 @@
                                 {{$item->user->name}}
                             </x-slot>
                         </x-axies.itemAuthor>
-                    </a>
                     
                 @endif
                 
